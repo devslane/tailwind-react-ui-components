@@ -4,7 +4,7 @@ import { EntityIdentifier } from 'constants/types/EntityIdentifier.type';
 import { SelectItemType } from 'constants/types/SelectItems.type';
 import React, { Fragment } from 'react';
 
-interface SelectProps {
+export interface SelectProps {
   items: SelectItemType[];
   onChange: (value?: EntityIdentifier) => void;
   selected?: EntityIdentifier;
@@ -15,12 +15,12 @@ interface SelectProps {
 const Select: React.FC<SelectProps> = (props: SelectProps) => {
   const { items, selected, placeholder, onChange, disabled } = props;
 
-  const selectedItem = (): SelectItemType | SelectItemType[] | undefined =>
+  const selectedItem = (): SelectItemType | undefined =>
     (items || []).find((item: SelectItemType) => item.value === selected);
 
   const renderSelectedItem = (): React.ReactNode => {
     const currItem = selectedItem();
-    if (currItem && !Array.isArray(currItem)) {
+    if (currItem) {
       return <span className='block truncate'>{currItem?.label}</span>;
     }
     return (
@@ -67,6 +67,7 @@ const Select: React.FC<SelectProps> = (props: SelectProps) => {
               {items.map((item) => (
                 <Listbox.Option
                   key={item.value}
+                  disabled={item.disabled}
                   className={({ active }) =>
                     `cursor-default select-none relative py-2 pl-10 pr-4 ${
                       active ? 'text-amber-900 bg-amber-100' : 'text-gray-900'

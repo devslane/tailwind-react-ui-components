@@ -6,6 +6,13 @@ export default {
   title: 'Spinner',
   component: TopRoundedSpinner,
   argTypes: {
+    size: {
+      type: {
+        name: 'enum',
+        value: ['xs', 'sm', 'md', 'lg', 'xl'],
+        required: true,
+      },
+    },
     border: {
       control: {
         type: null,

@@ -11,7 +11,7 @@
     "install:clean": "rm -rf node_modules/ && yarn",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "yarn run build:css && start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build:css": "tailwindcss -o public/tailwind.css"
   },
@@ -59,6 +59,7 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "tailwindcss": "^3.0.11",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
     "vite-tsconfig-paths": "^3.3.17"
