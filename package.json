@@ -5,21 +5,26 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint './src/**/*.{js,ts,tsx}' --fix",
-    "prettify": "prettier -c --write ./src/**/* ",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --fix",
+    "prettify": "prettier -c --write src/**/* ",
+    "lint:style": "stylelint 'src/**/*.{css,scss}' --fix",
     "install:clean": "rm -rf node_modules/ && yarn",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:css": "tailwindcss -o public/tailwind.css"
   },
   "dependencies": {
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass": "^1.46.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.6",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
@@ -48,6 +53,11 @@
     "lint-staged": "^11.1.2",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
+    "stylelint": "^14.6.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
     "tailwindcss": "^3.0.11",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
@@ -62,6 +72,10 @@
     "src/**/*.{js,ts,tsx}": [
       "yarn run lint",
       "yarn run prettify",
+      "git add --force"
+    ],
+    "src/**/*.{css,scss}": [
+      "yarn run lint:style",
       "git add --force"
     ]
   }

@@ -12,12 +12,13 @@
   @apply h-[3.75rem];
   @apply w-[3.75rem];
 }
+
 .spinner-lg {
   @apply h-20;
   @apply w-20;
 }
 
 .spinner-xl {
-  @apply h-[7.75rem];
-  @apply w-[7.75rem];
+  @apply h-[6.25rem];
+  @apply w-[6.25rem];
 }
