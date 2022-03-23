@@ -46,11 +46,12 @@ const Template: ComponentStory<typeof Modal> = (args) => {
       {visible && (
         <Modal
           {...args}
-          content={<span>Hey</span>}
           title='Test'
           visible={visible}
           handleVisibility={(value) => setVisibility(value)}
-        />
+        >
+          <span>Hey</span>
+        </Modal>
       )}
     </>
   );

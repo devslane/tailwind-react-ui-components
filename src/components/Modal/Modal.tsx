@@ -5,7 +5,7 @@ import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import React, { Fragment } from 'react';
 
 interface ModalProps {
-  content: React.ReactNode;
+  children: React.ReactNode;
   visible: boolean;
   handleVisibility: (value: boolean) => void;
   title?: React.ReactNode | string;
@@ -13,7 +13,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = (props: ModalProps) => {
-  const { content, visible, handleVisibility, title, closeOnOutsideClick } =
+  const { children, visible, handleVisibility, title, closeOnOutsideClick } =
     props;
 
   const closeModal = () => {
@@ -84,7 +84,7 @@ const Modal: React.FC<ModalProps> = (props: ModalProps) => {
                     aria-hidden='true'
                   />
                 </div>
-                {content}
+                {children}
               </div>
             </div>
           </Transition.Child>
