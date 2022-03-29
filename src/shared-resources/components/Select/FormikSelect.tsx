@@ -1,6 +1,6 @@
-import InputHelper from 'components/Inputhelper/InputHelper';
 import { useField } from 'formik';
 import React from 'react';
+import InputHelper from '../Inputhelper/InputHelper';
 import Select, { SelectProps } from './Select';
 
 interface FormikSelectProps extends Omit<SelectProps, 'onChange'> {

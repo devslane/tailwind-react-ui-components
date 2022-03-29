@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { AbbreviatedSize } from 'constants/types/AbbreviatedSize.type';
+import { AbbreviatedSize } from 'shared-resources/types/AbbreviatedSize.type';
 import './Spinner.module.css';
 
 export interface Props {

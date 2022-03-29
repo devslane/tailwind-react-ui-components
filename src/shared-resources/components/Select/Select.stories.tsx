@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { EntityIdentifier } from 'constants/types/EntityIdentifier.type';
+import { EntityIdentifier } from 'shared-resources/types/EntityIdentifier.type';
 import React, { useState } from 'react';
 import DummyData from './mock-data.json';
 import Select from './Select';
