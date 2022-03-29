@@ -1,7 +1,7 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
-import { EntityIdentifier } from 'constants/types/EntityIdentifier.type';
-import { SelectItemType } from 'constants/types/SelectItems.type';
+import { EntityIdentifier } from 'shared-resources/types/EntityIdentifier.type';
+import { SelectItemType } from 'shared-resources/types/SelectItems.type';
 import React, { Fragment } from 'react';
 
 export interface SelectProps {
