@@ -28,7 +28,7 @@ const TopRoundedSpinner: React.FunctionComponent<Props> = ({
       className={classNames(
         'animate-spin',
         'rounded-full',
-        'border-t-8',
+        'border-t-4',
         spinnerClassForSize[size],
         border,
         customClassName

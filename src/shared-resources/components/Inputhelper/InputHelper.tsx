@@ -1,5 +1,5 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 
 export interface InputHelperProps {
   type?: 'error' | 'helper';
@@ -10,7 +10,7 @@ const InputHelper: React.FC<InputHelperProps> = ({ text, type = 'helper' }) =>
   text ? (
     <p
       className={classNames('mt-2 text-sm', {
-        'text-error-600': type === 'error',
+        'text-red-600': type === 'error',
         'text-gray-500': type === 'helper',
       })}
       id='input-error'
@@ -19,4 +19,4 @@ const InputHelper: React.FC<InputHelperProps> = ({ text, type = 'helper' }) =>
     </p>
   ) : null;
 
-export default InputHelper;
+export default React.memo(InputHelper);
