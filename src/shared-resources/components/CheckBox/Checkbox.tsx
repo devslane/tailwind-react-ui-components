@@ -3,7 +3,7 @@ import React from 'react';
 import { CheckboxProps } from 'shared-resources/types/Checbox.type';
 import InputHelper from '../InputHelper/InputHelper';
 
-export const Checkbox: React.FC<CheckboxProps> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
   onChange,
   error,
   value,

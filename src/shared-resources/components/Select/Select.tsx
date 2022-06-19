@@ -7,16 +7,16 @@ import React, { Fragment } from 'react';
 export interface SelectProps {
   items: SelectItemType[];
   onChange: (value?: EntityIdentifier) => void;
-  selected?: EntityIdentifier;
+  selectedValue?: EntityIdentifier;
   placeholder?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
 }
 
 const Select: React.FC<SelectProps> = (props: SelectProps) => {
-  const { items, selected, placeholder, onChange, disabled } = props;
+  const { items, selectedValue, placeholder, onChange, isDisabled } = props;
 
   const selectedItem = (): SelectItemType | undefined =>
-    (items || []).find((item: SelectItemType) => item.value === selected);
+    (items || []).find((item: SelectItemType) => item.value === selectedValue);
 
   const renderSelectedItem = (): React.ReactNode => {
     const currItem = selectedItem();
@@ -31,7 +31,7 @@ const Select: React.FC<SelectProps> = (props: SelectProps) => {
   };
 
   const handleChange = (value: EntityIdentifier): void => {
-    if (value === selected) {
+    if (value === selectedValue) {
       onChange();
       return;
     }
@@ -40,7 +40,11 @@ const Select: React.FC<SelectProps> = (props: SelectProps) => {
 
   return (
     <div className='fixed w-72 top-16'>
-      <Listbox value={selected} onChange={handleChange} disabled={disabled}>
+      <Listbox
+        value={selectedValue}
+        onChange={handleChange}
+        disabled={isDisabled}
+      >
         <div className='relative mt-1'>
           <Listbox.Button
             className={({ disabled }) =>

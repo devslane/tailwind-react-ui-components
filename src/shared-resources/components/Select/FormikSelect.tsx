@@ -17,7 +17,7 @@ const FormikSelectMenu: React.FC<FormikSelectProps> = (props) => {
   return (
     <>
       <Select
-        selected={value}
+        selectedValue={value}
         onChange={(_value): void => setValue(_value)}
         {...props}
       />
