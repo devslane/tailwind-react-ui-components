@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { CheckboxProps } from 'shared-resources/types/Checbox.type';
-import InputHelper from '../InputHelper/InputHelper';
+import InputHelper from '../Inputhelper/InputHelper';
 
 const Checkbox: React.FC<CheckboxProps> = ({
   onChange,
