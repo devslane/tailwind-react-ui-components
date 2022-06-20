@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 import React from 'react';
-import InputHelper from '../InputHelper/InputHelper';
+import InputHelper from '../Inputhelper/InputHelper';
 import Select, { SelectProps } from './Select';
 
 interface FormikSelectProps extends Omit<SelectProps, 'onChange'> {
@@ -17,7 +17,7 @@ const FormikSelectMenu: React.FC<FormikSelectProps> = (props) => {
   return (
     <>
       <Select
-        selected={value}
+        selectedValue={value}
         onChange={(_value): void => setValue(_value)}
         {...props}
       />

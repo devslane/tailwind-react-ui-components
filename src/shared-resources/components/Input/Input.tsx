@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FunctionComponent } from 'react';
 import { InputProps } from 'shared-resources/types/Input.type';
-import InputHelper from '../InputHelper/InputHelper';
+import InputHelper from '../Inputhelper/InputHelper';
 import InputLabel from '../InputLabel/InputLabel';
 import PasswordInput from './PasswordInput';
 

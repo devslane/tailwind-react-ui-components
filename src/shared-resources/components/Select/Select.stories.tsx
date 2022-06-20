@@ -28,7 +28,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
     <Select
       {...args}
       items={DummyData}
-      selected={selected}
+      selectedValue={selected}
       onChange={(value) => setSelected(value as any)}
     />
   );
@@ -45,5 +45,5 @@ SingleSelectWithPlaceholder.args = {
 export const SingleSelectWithDisabled = Template.bind({});
 
 SingleSelectWithDisabled.args = {
-  disabled: true,
+  isDisabled: true,
 };

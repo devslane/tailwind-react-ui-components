@@ -12,7 +12,7 @@ interface Props {
   trailingIcon?: React.ReactNode;
 }
 
-export const Button: React.FC<Props> = ({
+const Button: React.FC<Props> = ({
   type,
   className,
   children,

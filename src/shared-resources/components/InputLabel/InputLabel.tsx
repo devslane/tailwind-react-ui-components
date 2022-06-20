@@ -4,7 +4,6 @@ import React, { FunctionComponent } from 'react';
 interface Props {
   htmlFor?: string;
   label?: string;
-  leadingIcon?: any;
   className?: string;
 }
 
