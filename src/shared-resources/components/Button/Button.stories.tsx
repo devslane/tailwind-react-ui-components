@@ -1,4 +1,4 @@
-import { LogoutIcon } from '@heroicons/react/outline';
+import { BiLogOut } from 'react-icons/bi';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import Button from './Button';
@@ -25,11 +25,11 @@ Disabled.args = {
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  trailingIcon: <LogoutIcon className='w-4 py-1 ml-2' />,
+  trailingIcon: <BiLogOut className='w-4 py-1 ml-2' />,
 };
 
 export const Submitting = Template.bind({});
 Submitting.args = {
-  trailingIcon: <LogoutIcon className='w-4 py-1 ml-2' />,
+  trailingIcon: <BiLogOut className='w-4 py-1 ml-2' />,
   isSubmitting: true,
 };

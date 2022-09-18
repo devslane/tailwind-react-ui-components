@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { PaginationProps } from 'shared-resources/types/Pagination.type';
@@ -53,7 +53,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
               className='relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50'
             >
               <span className='sr-only'>Previous</span>
-              <ChevronLeftIcon className='w-5 h-5' aria-hidden='true' />
+              <BsChevronLeft className='w-5 h-5' aria-hidden='true' />
             </button>
 
             <Input
@@ -78,7 +78,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
               className='relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50'
             >
               <span className='sr-only'>Next</span>
-              <ChevronRightIcon className='w-5 h-5' aria-hidden='true' />
+              <BsChevronRight className='w-5 h-5' aria-hidden='true' />
             </button>
           </nav>
         </div>

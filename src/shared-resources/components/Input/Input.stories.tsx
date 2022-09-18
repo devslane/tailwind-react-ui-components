@@ -1,4 +1,4 @@
-import { InboxIcon } from '@heroicons/react/outline';
+import { MdOutlineForwardToInbox } from 'react-icons/md';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import Input from './Input';
@@ -43,11 +43,11 @@ Password.args = {
 export const WithLeadingIcon = Template.bind({});
 WithLeadingIcon.args = {
   label: 'Basic Label',
-  leadingIcon: <InboxIcon className='text-gray-400' />,
+  leadingIcon: <MdOutlineForwardToInbox className='text-gray-400' />,
 };
 
 export const WithTrailingIcon = Template.bind({});
 WithTrailingIcon.args = {
   label: 'Basic Label',
-  trailingIcon: <InboxIcon className='text-gray-400' />,
+  trailingIcon: <MdOutlineForwardToInbox className='text-gray-400' />,
 };

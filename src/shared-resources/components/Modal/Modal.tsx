@@ -1,5 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { XIcon } from '@heroicons/react/solid';
+import { MdOutlineCancel } from 'react-icons/md';
 import useEscapeKeyDetector from 'hooks/useEscapeKeyDetector';
 import useOutsideClickDetector from 'hooks/useOutsideClickDetector';
 import React, { Fragment } from 'react';
@@ -78,7 +78,7 @@ const Modal: React.FC<ModalProps> = (props: ModalProps) => {
                     ) : (
                       title
                     ))}
-                  <XIcon
+                  <MdOutlineCancel
                     onClick={() => handleVisibility(false)}
                     className='w-5 h-5 text-gray-400 cursor-pointer'
                     aria-hidden='true'
