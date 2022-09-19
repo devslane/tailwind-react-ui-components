@@ -1,4 +1,4 @@
-import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
+import { HiEye, HiEyeOff } from 'react-icons/hi';
 import classNames from 'classnames';
 import React, { FunctionComponent, useCallback, useState } from 'react';
 import { InputProps } from 'shared-resources/types/Input.type';
@@ -65,9 +65,9 @@ const PasswordInput: FunctionComponent<PasswordProps> = ({
           onClick={() => handleChange()}
         >
           {visible ? (
-            <EyeIcon className='text-gray-400 cursor-pointer' />
+            <HiEye className='text-gray-400 cursor-pointer' />
           ) : (
-            <EyeOffIcon className='text-gray-400 cursor-pointer' />
+            <HiEyeOff className='text-gray-400 cursor-pointer' />
           )}
         </div>
       </div>

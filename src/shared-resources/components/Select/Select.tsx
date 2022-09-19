@@ -1,5 +1,5 @@
 import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import { HiCheck, HiSelector } from 'react-icons/hi';
 import { EntityIdentifier } from 'shared-resources/types/EntityIdentifier.type';
 import { SelectItemType } from 'shared-resources/types/SelectItems.type';
 import React, { Fragment } from 'react';
@@ -55,7 +55,7 @@ const Select: React.FC<SelectProps> = (props: SelectProps) => {
           >
             <span className='block truncate'>{renderSelectedItem()}</span>
             <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
-              <SelectorIcon
+              <HiSelector
                 className='w-5 h-5 text-gray-400'
                 aria-hidden='true'
               />
@@ -90,7 +90,7 @@ const Select: React.FC<SelectProps> = (props: SelectProps) => {
                       </span>
                       {selected ? (
                         <span className='absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600'>
-                          <CheckIcon className='w-5 h-5' aria-hidden='true' />
+                          <HiCheck className='w-5 h-5' aria-hidden='true' />
                         </span>
                       ) : null}
                     </>
