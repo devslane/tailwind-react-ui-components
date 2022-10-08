@@ -1,106 +1,87 @@
-import { Listbox, Transition } from '@headlessui/react';
-import { HiCheck, HiSelector } from 'react-icons/hi';
+import React, { useMemo } from 'react';
+import ReactSelect, { MultiValue, SingleValue } from 'react-select';
 import { EntityIdentifier } from 'shared-resources/types/EntityIdentifier.type';
 import { SelectItemType } from 'shared-resources/types/SelectItems.type';
-import React, { Fragment } from 'react';
+import SelectControl from './SelectControl';
+import SelectItem from './SelectItem';
+import { SelectMultiContainer } from './SelectMultiValue';
 
 export interface SelectProps {
   items: SelectItemType[];
-  onChange: (value?: EntityIdentifier) => void;
-  selectedValue?: EntityIdentifier;
+  onChange: (value?: EntityIdentifier | EntityIdentifier[]) => void;
+  selected?: EntityIdentifier | EntityIdentifier[];
   placeholder?: string;
   isDisabled?: boolean;
+  isMulti?: boolean;
+  autoFocus?: boolean;
+  isSearchable?: boolean;
+  isLoading?: boolean;
+  isClearable?: boolean;
 }
 
 const Select: React.FC<SelectProps> = (props: SelectProps) => {
-  const { items, selectedValue, placeholder, onChange, isDisabled } = props;
+  const {
+    items,
+    selected,
+    placeholder,
+    onChange,
+    isDisabled,
+    isMulti,
+    autoFocus,
+    isSearchable,
+    isLoading,
+    isClearable,
+  } = props;
 
-  const selectedItem = (): SelectItemType | undefined =>
-    (items || []).find((item: SelectItemType) => item.value === selectedValue);
+  const currentValue: SelectItemType | SelectItemType[] | undefined =
+    useMemo(() => {
+      if (isMulti && Array.isArray(selected)) {
+        return items.filter((option: SelectItemType) =>
+          selected.includes(option.value)
+        );
+      }
+      return items.find((option: SelectItemType) => selected === option.value);
+    }, [isMulti, selected, items]);
 
-  const renderSelectedItem = (): React.ReactNode => {
-    const currItem = selectedItem();
-    if (currItem) {
-      return <span className='block truncate'>{currItem?.label}</span>;
+  const handleChange = (
+    item: SingleValue<SelectItemType> | MultiValue<SelectItemType>
+  ): void => {
+    const previousValue = currentValue;
+    if (
+      Array.isArray(previousValue) &&
+      !previousValue.some(
+        (option) => option.value === (item as SelectItemType)?.value
+      )
+    ) {
+      onChange([
+        ...(selected as EntityIdentifier[]),
+        (item as SelectItemType)?.value,
+      ]);
+    } else {
+      onChange((item as SelectItemType)?.value);
     }
-    return (
-      <span className='block truncate opacity-50'>
-        {placeholder || 'Select...'}
-      </span>
-    );
-  };
-
-  const handleChange = (value: EntityIdentifier): void => {
-    if (value === selectedValue) {
-      onChange();
-      return;
-    }
-    onChange(value);
   };
 
   return (
-    <div className='fixed w-72 top-16'>
-      <Listbox
-        value={selectedValue}
+    <div className='fixed w-[50%] top-16'>
+      <ReactSelect
+        value={currentValue}
+        isMulti={isMulti}
         onChange={handleChange}
-        disabled={isDisabled}
-      >
-        <div className='relative mt-1'>
-          <Listbox.Button
-            className={({ disabled }) =>
-              `relative w-full py-2 pl-3 pr-10 text-left rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm ${
-                disabled ? 'bg-gray-50' : 'bg-white'
-              }`
-            }
-          >
-            <span className='block truncate'>{renderSelectedItem()}</span>
-            <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
-              <HiSelector
-                className='w-5 h-5 text-gray-400'
-                aria-hidden='true'
-              />
-            </span>
-          </Listbox.Button>
-          <Transition
-            as={Fragment}
-            leave='transition ease-in duration-100'
-            leaveFrom='opacity-100'
-            leaveTo='opacity-0'
-          >
-            <Listbox.Options className='absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
-              {items.map((item) => (
-                <Listbox.Option
-                  key={item.value}
-                  disabled={item.disabled}
-                  className={({ active }) =>
-                    `cursor-default select-none relative py-2 pl-10 pr-4 ${
-                      active ? 'text-amber-900 bg-amber-100' : 'text-gray-900'
-                    }`
-                  }
-                  value={item.value}
-                >
-                  {({ selected }) => (
-                    <>
-                      <span
-                        className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
-                        }`}
-                      >
-                        {item.label}
-                      </span>
-                      {selected ? (
-                        <span className='absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600'>
-                          <HiCheck className='w-5 h-5' aria-hidden='true' />
-                        </span>
-                      ) : null}
-                    </>
-                  )}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
-          </Transition>
-        </div>
-      </Listbox>
+        options={items}
+        isDisabled={isDisabled}
+        placeholder={placeholder}
+        autoFocus={autoFocus}
+        hideSelectedOptions={false}
+        isSearchable={isSearchable}
+        isLoading={isLoading}
+        components={{
+          Option: SelectItem,
+          Control: SelectControl,
+          MultiValueContainer: SelectMultiContainer,
+        }}
+        isClearable={isClearable}
+      />
     </div>
   );
 };

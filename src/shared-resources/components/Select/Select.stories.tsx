@@ -28,10 +28,22 @@ const Template: ComponentStory<typeof Select> = (args) => {
     <Select
       {...args}
       items={DummyData}
-      selectedValue={selected}
+      selected={selected}
       onChange={(value) => setSelected(value as any)}
     />
   );
+};
+
+export const SelectWithDisabled = Template.bind({});
+
+SelectWithDisabled.args = {
+  isDisabled: true,
+};
+
+export const SelectWithLoading = Template.bind({});
+
+SelectWithLoading.args = {
+  isLoading: true,
 };
 
 export const SingleSelect = Template.bind({});
@@ -42,8 +54,8 @@ SingleSelectWithPlaceholder.args = {
   placeholder: 'Single Select With Placeholder',
 };
 
-export const SingleSelectWithDisabled = Template.bind({});
+export const MultiSelect = Template.bind({});
 
-SingleSelectWithDisabled.args = {
-  isDisabled: true,
+MultiSelect.args = {
+  isMulti: true,
 };

@@ -5,11 +5,13 @@
   },
   {
     "value": 2,
-    "label": "Chital"
+    "label": "Chital",
+    "isDisabled": true
   },
   {
     "value": 3,
-    "label": "Parrot, hawk-headed"
+    "label": "Parrot, hawk-headed",
+    "isDisabled": true
   },
   {
     "value": 4,
