@@ -13,8 +13,8 @@
     "pre-commit": "lint-staged",
     "storybook": "concurrently  \"yarn run watch:css\" \"start-storybook -p 6006\" ",
     "build-storybook": "yarn run build:css && build-storybook",
-    "build:css": "tailwindcss -o public/tailwind.css",
-    "watch:css": "tailwindcss -o public/tailwind.css --watch"
+    "build:css": "tailwindcss -o .storybook/tailwind.css",
+    "watch:css": "tailwindcss -o .storybook/tailwind.css --watch"
   },
   "dependencies": {
     "formik": "^2.2.9",
