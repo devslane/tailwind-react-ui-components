@@ -3,7 +3,7 @@ import React from 'react';
 import InputHelper from '../Inputhelper/InputHelper';
 import Select, { SelectProps } from './Select';
 
-interface FormikSelectProps extends Omit<SelectProps, 'onChange'> {
+export interface FormikSelectProps extends Omit<SelectProps, 'onChange'> {
   name: string;
 }
 

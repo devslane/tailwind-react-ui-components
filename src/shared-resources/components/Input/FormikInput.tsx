@@ -3,7 +3,8 @@ import React from 'react';
 import { InputProps } from 'shared-resources/types/Input.type';
 import Input from './Input';
 
-interface FormikInputProps extends Omit<InputProps, 'onChange' | 'value'> {
+export interface FormikInputProps
+  extends Omit<InputProps, 'onChange' | 'value'> {
   name: string;
 }
 
