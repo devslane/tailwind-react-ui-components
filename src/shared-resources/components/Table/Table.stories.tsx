@@ -1,4 +1,7 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  Meta as ComponentMeta,
+  StoryFn as ComponentStory,
+} from '@storybook/react';
 import React, { useState } from 'react';
 import { ColumnProps } from 'shared-resources/types/Table.type';
 import records from './mock.data.json';

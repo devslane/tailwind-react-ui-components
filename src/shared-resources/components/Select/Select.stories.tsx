@@ -1,4 +1,7 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  Meta as ComponentMeta,
+  StoryFn as ComponentStory,
+} from '@storybook/react';
 import { EntityIdentifier } from 'shared-resources/types/EntityIdentifier.type';
 import React, { useState } from 'react';
 import DummyData from './mock-data.json';

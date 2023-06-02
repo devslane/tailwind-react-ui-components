@@ -1,8 +1,8 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ChangeEvent } from 'react';
 
 export interface InputProps {
   value: any;
-  onChange: (event: any) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   label?: string;
   helperText?: string;
