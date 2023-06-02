@@ -3,7 +3,7 @@ import React from 'react';
 import Spinner from '../Spinner/Spinner';
 
 interface Props {
-  type?: 'button' | 'submit';
+  type?: 'button' | 'submit' | 'reset';
   className?: string;
   onClick?: (e?: any) => void;
   children?: React.ReactNode;

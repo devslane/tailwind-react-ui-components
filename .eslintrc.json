@@ -68,6 +68,7 @@
     //   }
     // ],
     "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
     "no-unused-vars": "off",
     //    TODO: reinsert it once setup is complete
     //    "@typescript-eslint/no-unused-vars": ["error"],
