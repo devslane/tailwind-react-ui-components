@@ -1,6 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
-import Tooltip, { TooltipPlacement } from './Tooltip';
+// types
+import { TooltipPlacement } from 'shared-resources/types/Tooltip.type';
+// components
+import Tooltip from './Tooltip';
 
 export default {
   title: 'Tooltip',
