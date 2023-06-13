@@ -20,8 +20,7 @@ async function getPresignedURL(data: {
   fileName: string;
   fileType: string;
 }): Promise<string> {
-  const _url =
-    'https://qr0ps39muj.execute-api.us-east-1.amazonaws.com/dev/s3Upload';
+  const _url = 'URL';
   const response = await axios.post(_url, data, {
     headers: {
       'Content-Type': 'application/json',
