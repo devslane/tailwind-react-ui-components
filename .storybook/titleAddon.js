@@ -1,5 +1,5 @@
 // .storybook/titleAddon.js
-import addons from '@storybook/addons';
+import { addons } from '@storybook/manager-api';
 import { STORY_RENDERED } from '@storybook/core-events';
 
 addons.register('TitleAddon', (api) => {

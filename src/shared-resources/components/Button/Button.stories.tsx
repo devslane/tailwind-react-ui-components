@@ -1,5 +1,8 @@
 import { BiLogOut } from 'react-icons/bi';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  Meta as ComponentMeta,
+  StoryFn as ComponentStory,
+} from '@storybook/react';
 import React from 'react';
 import Button from './Button';
 

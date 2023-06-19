@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { InputProps } from 'shared-resources/types/Input.type';
 import InputHelper from '../Inputhelper/InputHelper';
 import InputLabel from '../InputLabel/InputLabel';
 import PasswordInput from './PasswordInput';
 
-const Input: FunctionComponent<InputProps> = (props: InputProps) => {
+const Input: FC<InputProps> = (props: InputProps) => {
   const {
     value,
     type,

@@ -1,4 +1,7 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  Meta as ComponentMeta,
+  StoryFn as ComponentStory,
+} from '@storybook/react';
 import React from 'react';
 import { TabItemProps } from 'shared-resources/types/Tabs.type';
 import Tabs from './Tabs';

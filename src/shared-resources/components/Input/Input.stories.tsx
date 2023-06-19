@@ -1,5 +1,8 @@
 import { MdOutlineForwardToInbox } from 'react-icons/md';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {
+  Meta as ComponentMeta,
+  StoryFn as ComponentStory,
+} from '@storybook/react';
 import React from 'react';
 import Input from './Input';
 
